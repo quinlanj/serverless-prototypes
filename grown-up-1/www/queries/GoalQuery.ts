@@ -10,6 +10,13 @@ export class GoalQuery extends AbstractQuery {
     this.nodeName = 'goals';
   }
 
+  // Instaql Query: { goals : {}}
+  async default(viewerContext: ViewerContext): Promise<Node[]> {
+    const result = await GoalEntity.loader(viewerContext).loadManyByFieldEqualityConjunctionAsync({});
+    return resolve(viewerContext, this.nodeName, result, []);
+  }
+
+  // Instaql Query: { goals : { ${ where: { field: value } } } }
   async where(args: {[field: string]: string}, viewerContext: ViewerContext): Promise<Goal[]> {
     const newArgs = {};
     for (const field in args) {

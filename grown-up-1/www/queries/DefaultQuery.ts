@@ -9,6 +9,13 @@ export class DefaultQuery extends AbstractQuery {
     this.nodeName = nodeName;
   }
 
+  // Instaql Query: { nodeName : {}}
+  async default(viewerContext: ViewerContext): Promise<Node[]> {
+    const result = await NodeEntity.loader(viewerContext).loadManyByFieldEqualityConjunctionAsync({nodeType: this.nodeName});
+    return resolve(viewerContext, this.nodeName, result, []);
+  }
+
+  // Instaql Query: { nodeName : { ${ where: { field: value } } } }
   async where(args: {[field: string]: string}, viewerContext: ViewerContext): Promise<Node[]> {
     const result =  await NodeEntity.loader(viewerContext).loadByEqualityConjunctionAsync({...args, nodeType: this.nodeName});
     return resolve(viewerContext, this.nodeName, result, []);
