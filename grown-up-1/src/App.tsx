@@ -1,7 +1,7 @@
 // Now in your App.js
 import { useState } from "react";
 
-import { useInit, useQuery, useTransactionMutation, tx, auth, id } from "./placeholders/db/react";
+import { useInit, useQuery, useTransactionMutation, tx, auth, id } from "./placeholders/db-react";
 
 
 function App() {
