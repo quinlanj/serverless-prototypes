@@ -5,6 +5,7 @@ import {
   transact as transactInstantDB,
   tx as txInstantDB,
   auth as authInstantDB,
+  id as idInstantDB,
 } from "@instantdb/react";
 import uuid from "uuid";
 
@@ -55,5 +56,5 @@ export function useInit(): InitState {
 }
 
 export function id(): string {
-  return uuid.v4();
+  return idInstantDB();
 }
