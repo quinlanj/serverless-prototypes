@@ -1,7 +1,7 @@
 // Now in your App.js
 import { useState } from "react";
 
-import { useInit, useAdhocQuery, adhocTransact,  tx, auth, id, useGetGoals, useAddTodos } from "./placeholders/db/react";
+import { useInit, useQuery, useTransactionMutation, tx, auth, id } from "./placeholders/db/react";
 
 
 function App() {
@@ -91,11 +91,8 @@ function Login() {
 // https://paper.dropbox.com/doc/InstaQL--BgBK88TTiSE9OV3a17iCwDjCAg-yVxntbv98aeAovazd9TNL
 function Main() {
   // Starting out
-  const data = useAdhocQuery({ goals: { todos: {} } });
-
-  // Mature query
-  const goals = useGetGoals() ?? [];
-  const addTodos = useAddTodos([{id: id(), data: {title: "Go on a run"}}], id());
+  const {data, error} = useQuery({ goals: { todos: {} } });
+  const transaction = useTransactionMutation();
 
   return (
     <div>
@@ -106,7 +103,7 @@ function Main() {
           const todoBId = id();
 
           // Starting out
-          adhocTransact([
+          transaction.mutate([
             tx.todos[todoAId].update({ title: "Go on a run" }),
             tx.todos[todoBId].update({
               title: "Drink a protein shake",

@@ -26,12 +26,20 @@ export interface TransactionChunk {
   delete: () => TransactionChunk;
 }
 
-export function useAdhocQuery(instaql: Object): Object {
-  return useQueryInstantDB(instaql);
+type QueryResult = {status: any, data: any, error: any, isFetching: boolean};
+
+export function useQuery(instaql: Object): QueryResult {
+  return {status: 'ok', data: useQueryInstantDB(instaql), error: null, isFetching: false};
 }
 
-export function adhocTransact(x: TransactionChunk | TransactionChunk[]): void {
-  return transactInstantDB(x);
+type UseMutationFunction = {
+  mutate: (args: any) => any;
+}
+
+export function useTransactionMutation(): UseMutationFunction {
+  return {
+    mutate: (x: TransactionChunk | TransactionChunk[]) => transactInstantDB(x),
+  }
 }
 
 export type InitState =
@@ -44,22 +52,6 @@ export function useInit(): InitState {
     websocketURI: "wss://instant-server.herokuapp.com/api",
     apiURI: "https://instant-server.herokuapp.com/api",
   }) as InitState;
-}
-
-export function useGetGoals() {
-  return useQueryInstantDB({ goals: { todos: {} } }) as any;
-}
-
-export type Todo = {
-  id: string;
-  data: Record<string, any>;
-}
-
-export function useAddTodos(todos: Todo[], goalId: string) {
-  const todoCreation = todos.map((todo) => (txInstantDB.todos[todo.id].update(todo.data)
-  ));
-  const goalLinks = todos.map((todo) => (txInstantDB.goals[goalId].link({ name: "todos" })));
-  return transactInstantDB([...todoCreation,...goalLinks]);
 }
 
 export function id(): string {
