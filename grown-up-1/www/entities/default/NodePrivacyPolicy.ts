@@ -1,12 +1,7 @@
 import { AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../libraries/entity/Placeholders";
 import NodeEntity, { NodeFields } from "./NodeEntity";
 
-export default class NodePrivacyPolicy extends EntityPrivacyPolicy<
-  NodeFields,
-  string,
-  ViewerContext,
-  NodeEntity
-> {
+export default class NodePrivacyPolicy extends EntityPrivacyPolicy {
   protected override readonly readRules = [
     new AlwaysAllowPrivacyPolicyRule<NodeFields, string, ViewerContext, NodeEntity>(),
   ];

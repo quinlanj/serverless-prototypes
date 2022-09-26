@@ -5,7 +5,9 @@ export class EntityFieldDefinition<T> {
   }
 }
 
-export class ViewerContext {}
+export type ViewerContext = any;
+
+export type Context = any;
 
 export class Entity<A,B,C> {
   static loader(viewerContext: ViewerContext): any {
@@ -21,6 +23,11 @@ export class Entity<A,B,C> {
   static deleter(viewerContext: ViewerContext): any {}
 
   static updater(viewerContext: ViewerContext): any {}
+}
+
+
+export class SchemalessEntity extends Entity<any,any,any> {
+
 }
 
 export enum DatabaseAdapterFlavor {
@@ -43,11 +50,15 @@ export class EntityConfiguration<T> {
   }
 }
 
-export class EntityPrivacyPolicy<A,B,C,D> {
+export class EntityPrivacyPolicy {
+  static readonly nodeName: any;
   protected readonly readRules: any;
   protected readonly createRules: any;
   protected readonly updateRules: any;
   protected readonly deleteRules: any;
+}
+
+export class SchemalessEntityPrivacyPolicy extends EntityPrivacyPolicy {
 }
 
 export class AlwaysAllowPrivacyPolicyRule<A,B,C,D> {
@@ -56,4 +67,28 @@ export class AllowIfUserOwnerPrivacyRule<A,B,C> {
   constructor(arg: any){
 
   }
+}
+
+export enum RuleEvaluationResult {
+  /**
+   * Deny viewer access to the entity.
+   */
+  DENY = -1,
+
+  /**
+   * Defer entity viewer access to subsequent rule in the privacy policy.
+   */
+  SKIP = 0,
+
+  /**
+   * Allow viewer access to the entity.
+   */
+  ALLOW = 1,
+}
+
+export default abstract class PrivacyPolicyRule {
+  abstract evaluateAsync(
+    arg1: any,
+    arg2: any
+  ): Promise<RuleEvaluationResult>;
 }
