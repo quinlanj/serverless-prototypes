@@ -1,5 +1,5 @@
-import { Context, ViewerContext } from "../../libraries/entity/Placeholders";
-import { decodeJWT } from "../../libraries/placeholders/utils";
+import { Context, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { decodeJWT } from "../../../libraries/placeholders/utils";
 
 
 /**

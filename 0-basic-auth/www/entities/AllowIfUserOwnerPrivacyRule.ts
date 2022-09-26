@@ -1,4 +1,4 @@
-import PrivacyPolicyRule, { RuleEvaluationResult, SchemalessEntity, ViewerContext } from "../../libraries/entity/Placeholders";
+import PrivacyPolicyRule, { RuleEvaluationResult, SchemalessEntity, ViewerContext } from "../../../libraries/entity/Placeholders";
 
 /**
  * Example privacy rule that makes use of the types of ViewerContexts specific

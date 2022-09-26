@@ -1,15 +1,10 @@
-import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../libraries/entity/Placeholders";
+import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../libraries/entity/Placeholders";
 import GoalEntity, { GoalFields } from "./GoalEntity";
 
 /**
  * For purposes of this demonstration, goals are considered public and can only be mutated by the owner.
  */
-export default class GoalPrivacyPolicy extends EntityPrivacyPolicy<
-  GoalFields,
-  string,
-  ViewerContext,
-  GoalEntity
-> {
+export default class GoalPrivacyPolicy extends EntityPrivacyPolicy {
   protected override readonly readRules = [
     new AlwaysAllowPrivacyPolicyRule<GoalFields, string, ViewerContext, GoalEntity>(),
   ];

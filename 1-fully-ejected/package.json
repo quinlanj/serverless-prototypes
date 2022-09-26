@@ -1,0 +1,20 @@
+{
+  "name": "prototype-1",
+  "version": "0.0.0",
+  "scripts": {
+
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "express": "^4.17.1",
+    "@instantdb/react": "latest",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17",
+    "@types/uuid": "^8.3.4",
+    "typescript": "~4.7.4"
+  }
+}

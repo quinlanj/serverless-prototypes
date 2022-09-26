@@ -1,4 +1,4 @@
-import { Entity } from "../../libraries/entity/Placeholders";
+import { Entity } from "../entity/Placeholders";
 
 export class TodoEntity extends Entity<any, any, any>{
 
