@@ -1,5 +1,5 @@
-import { StringField, UUIDField } from "../../../libraries/entity/EntityFields";
-import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { StringField, UUIDField } from "../../../../libraries/entity/EntityFields";
+import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../../../libraries/entity/Placeholders";
 import EdgePrivacyPolicy from "./EdgePrivacyPolicy";
 
 export interface EdgeFields {

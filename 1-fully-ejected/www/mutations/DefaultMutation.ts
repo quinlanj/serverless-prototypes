@@ -1,5 +1,5 @@
-import { AbstractMutation } from "../../libraries/api/Placeholders";
-import { ViewerContext } from "../../libraries/entity/Placeholders";
+import { AbstractMutation } from "../../../libraries/api/Placeholders";
+import { ViewerContext } from "../../../libraries/entity/Placeholders";
 import EdgeEntity from "../entities/default/EdgeEntity";
 import NodeEntity from "../entities/default/NodeEntity";
 

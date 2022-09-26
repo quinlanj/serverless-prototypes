@@ -1,5 +1,5 @@
-import { AbstractQuery } from "../../libraries/api/Placeholders";
-import { ViewerContext } from "../../libraries/entity/Placeholders";
+import { AbstractQuery } from "../../../libraries/api/Placeholders";
+import { ViewerContext } from "../../../libraries/entity/Placeholders";
 import GoalEntity from "../entities/GoalEntity";
 import resolve from "../resolvers";
 import { Goal } from "../resolvers/GoalResolver";

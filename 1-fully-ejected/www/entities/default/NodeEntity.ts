@@ -1,5 +1,5 @@
-import { JSONObjectField, StringField, UUIDField } from "../../../libraries/entity/EntityFields";
-import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { JSONObjectField, StringField, UUIDField } from "../../../../libraries/entity/EntityFields";
+import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../../../libraries/entity/Placeholders";
 import NodePrivacyPolicy from "./NodePrivacyPolicy";
 
 export interface NodeFields {

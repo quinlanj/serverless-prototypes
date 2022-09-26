@@ -1,5 +1,5 @@
-import { DateField, StringField, UUIDField } from "../../libraries/entity/EntityFields";
-import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../libraries/entity/Placeholders";
+import { DateField, StringField, UUIDField } from "../../../libraries/entity/EntityFields";
+import { CacheAdapterFlavor, DatabaseAdapterFlavor, Entity, EntityCompanionDefinition, EntityConfiguration, ViewerContext } from "../../../libraries/entity/Placeholders";
 import GoalPrivacyPolicy from "./GoalPrivacyPolicy";
 
 export interface GoalFields {
