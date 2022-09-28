@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Node {
+  id    String @id @default(uuid())
+  data  String // Sqlite doesn't support JSON in sqlite
+  nodeType String
+  SourceEdges Edge[] @relation("SourceEdges")
+  DestinationEdges Edge[] @relation("DestinationEdges")
+}
+
+model Edge {
+  sourceNodeId    String
+  sourceNode Node @relation("SourceEdges", fields: [sourceNodeId], references: [id])
+  destinationNodeId String
+  destinationNode Node @relation("DestinationEdges", fields: [destinationNodeId], references: [id])
+  name String
+  @@id([sourceNodeId, destinationNodeId, name])
+}
