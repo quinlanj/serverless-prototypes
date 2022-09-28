@@ -1,4 +1,4 @@
-import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, SchemalessEntityPrivacyPolicy, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, SchemalessEntityPrivacyPolicy, ViewerContext } from "../../../../libraries/entity/Placeholders";
 
 /**
  * For purposes of this demonstration, goals are considered public and can only be mutated by the owner.
