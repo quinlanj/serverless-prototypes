@@ -1,4 +1,4 @@
-import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { AllowIfUserOwnerPrivacyRule, AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../../libraries/entity/Placeholders";
 import GoalEntity, { GoalFields } from "./GoalEntity";
 
 /**

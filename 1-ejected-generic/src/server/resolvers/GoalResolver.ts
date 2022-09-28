@@ -1,5 +1,5 @@
-import { AbstractResolver } from "../../libraries/api/Placeholders";
-import { ViewerContext } from "../../libraries/entity/Placeholders";
+import { AbstractResolver } from "../../../../libraries/api/Placeholders";
+import { ViewerContext } from "../../../../libraries/entity/Placeholders";
 import GoalEntity from "../entities/GoalEntity";
 import { TodoEntity, UserEntity } from "../placeholders/entities";
 import { Resolver, Todo, User } from "../placeholders/resolvers";
@@ -30,7 +30,7 @@ export class GoalResolver extends AbstractResolver {
     return {
       id: (goal: GoalEntity) => goal.getID(),
       description: (goal: GoalEntity) => goal.getField('description'),
-      oldField: (goal: GoalEntity) => goal.getField('newField'),
+      oldFieldThatNoLongerExists: (goal: GoalEntity) => goal.getField('newField'),
       newField: (goal: GoalEntity) => goal.getField('newField')
     }
   }

@@ -1,4 +1,4 @@
-import { Entity, ViewerContext } from "../../../libraries/entity/Placeholders";
+import { Entity, ViewerContext } from "../../../../libraries/entity/Placeholders";
 import { DefaultResolver } from "./DefaultResolver";
 import { GoalResolver } from "./GoalResolver";
 

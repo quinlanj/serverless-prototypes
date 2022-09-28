@@ -1,4 +1,4 @@
-import { AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../../libraries/entity/Placeholders";
+import { AlwaysAllowPrivacyPolicyRule, EntityPrivacyPolicy, ViewerContext } from "../../../../../libraries/entity/Placeholders";
 import NodeEntity, { NodeFields } from "./NodeEntity";
 
 export default class NodePrivacyPolicy extends EntityPrivacyPolicy {
