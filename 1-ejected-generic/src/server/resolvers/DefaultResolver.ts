@@ -12,7 +12,7 @@ export class DefaultResolver extends AbstractResolver {
   }
   
   static async resolveEdgesAsync(viewerContext: ViewerContext, node: NodeEntity, explicitEdges: string[]): Promise<Record<string, NodeEntity>> {
-    const edgeMap = {};
+    const edgeMap = {} as Record<string, NodeEntity>;
     for (let edge of explicitEdges) {
       const dstNodeIds = await EdgeEntity.loader(viewerContext).loadManyByFieldEqualityConjunctionAsync({'src_node_id': node.getID(), 'name': edge});
       const edgeNodes = await NodeEntity.loader(viewerContext).loadManyAsync(dstNodeIds);
