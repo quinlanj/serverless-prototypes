@@ -69,6 +69,10 @@ export class AllowIfUserOwnerPrivacyRule<A,B,C> {
   }
 }
 
+export enum ConflictPolicy {
+  DO_NOTHING = 'DO_NOTHING',
+}
+
 export enum RuleEvaluationResult {
   /**
    * Deny viewer access to the entity.
