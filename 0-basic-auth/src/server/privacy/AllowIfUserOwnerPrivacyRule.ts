@@ -15,7 +15,7 @@ import PrivacyPolicyRule, { RuleEvaluationResult, SchemalessEntity, ViewerContex
  * Otherwise, it defers to the next rule in the policy.
  */
 export default class AllowIfUserOwnerPrivacyRule extends PrivacyPolicyRule {
-  constructor(private readonly entityOwnerField: string) {
+  constructor() {
     super();
   }
 
@@ -23,7 +23,7 @@ export default class AllowIfUserOwnerPrivacyRule extends PrivacyPolicyRule {
     viewerContext: ViewerContext,
     entity: SchemalessEntity
   ): Promise<RuleEvaluationResult> {
-    if (entity.getField(this.entityOwnerField) === viewerContext.userID) {
+    if (entity.getField('userIdentifier') === viewerContext.userID) {
       return RuleEvaluationResult.ALLOW;
     }
     return RuleEvaluationResult.SKIP;
